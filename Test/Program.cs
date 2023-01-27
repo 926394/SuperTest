@@ -1,26 +1,48 @@
 ﻿Console.Clear();
-string[] GetMassivNum(string[] coll)
+
+Console.Write("Здравствуйте!");
+Console.WriteLine();
+string[] OneMassivStr(string[] coll)
 {
-    for(int index = 0; index < coll.Length; index ++)
+    for (int index = 0; index < coll.Length; index++)
     {
-        Console.Write($"Введите {index+1} значеие из нескольких символов: ");
+        Console.Write($"Введите {index + 1} значеие из нескольких символов: ");
         coll[index] = Console.ReadLine()!;
     }
     return coll;
 }
 
-void TheFinishNum(string[] collection)
+string[] SortingMetod(string[] line)
 {
-    for(int index = 0; index < collection.Length; index ++)
+    string[] res = new string[line.Length];
+
+    for (int i = 0; i < line.Length; i++)
     {
-        Console.Write($"{collection[index]} ");  
+        string lin = line[i];
+        int f = lin.Length;
+        if (f <= 3)
+        {
+            res[i] = line[i];
+        }
     }
-    Console.WriteLine();
+    return res;
 }
 
-string[] array = new string[2];
+void TheAnswString(string[] collection)
+{
+    for (int index = 0; index < collection.Length; index++)
+    {
+        Console.Write($"{collection[index]} ");
+    }
+    // return collection;
+}
 
-GetMassivNum(array);
+string[] array = new string[5];
+
+OneMassivStr(array);
 Console.WriteLine();
-TheFinishNum(array);
+TheAnswString(array);
 Console.WriteLine();
+string[] endStr = SortingMetod(array);
+Console.WriteLine();
+TheAnswString(endStr);
