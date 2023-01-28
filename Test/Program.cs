@@ -1,40 +1,38 @@
 ﻿Console.Clear();
-
 Console.Write("Здравствуйте!");
 Console.WriteLine();
-string[] OneMassivStr(string[] coll)
+string[] OneMassivStr(string[] strMass1)
 {
-    for (int index = 0; index < coll.Length; index++)
+    for (int i = 0; i < strMass1.Length; i++)
     {
-        Console.Write($"Введите {index + 1} значеие из нескольких символов: ");
-        coll[index] = Console.ReadLine()!;
+        Console.Write($"Введите {i + 1} значеие из нескольких символов: ");
+        strMass1[i] = Console.ReadLine()!;
     }
-    return coll;
+    return strMass1;
 }
 
-string[] SortingMetod(string[] line)
-{
-    string[] res = new string[line.Length];
 
-    for (int i = 0; i < line.Length; i++)
+string[] SortingMetod(string[] firstMass)
+{
+    string[] strMass2 = new string[firstMass.Length];
+    for (int i = 0,f = 0; i < firstMass.Length; i++)
     {
-        string lin = line[i];
-        int f = lin.Length;
-        if (f <= 3)
+        if (firstMass[i].Length <= 3)
         {
-            res[i] = line[i];
+            strMass2[f] = firstMass[i];
+            f++;
         }
     }
-    return res;
+    return strMass2;
 }
 
-void TheAnswString(string[] collection)
+string[] TheAnswString(string[] collection)
 {
-    for (int index = 0; index < collection.Length; index++)
+    for (int i = 0; i < collection.Length; i++)
     {
-        Console.Write($"{collection[index]} ");
+        Console.Write($"{collection[i]} ");
     }
-    // return collection;
+    return collection;
 }
 
 string[] array = new string[5];
@@ -46,3 +44,5 @@ Console.WriteLine();
 string[] endStr = SortingMetod(array);
 Console.WriteLine();
 TheAnswString(endStr);
+Console.WriteLine();
+Console.WriteLine();
